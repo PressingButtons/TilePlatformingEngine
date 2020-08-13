@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tile Platformer</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="tp.css">
+    <script type="text/javascript" src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
+    <script type="text/javascript" src='scripts/screen.js'></script>
+    <script type="text/javascript" src='scripts/mapbuilder.js'></script>
+    <script type="text/javascript" src='scripts/graphics.js'></script>
+    <script type="text/javascript" src='scripts/KeyReader.js'></script>
+    <script type="text/javascript" src='scripts/GameObject.js'></script>
+    <script type="text/javascript" src='scripts/Tile_Collision_Engine.js'></script>
+    <script type="text/javascript" src='scripts/demonstration.js'></script>
+    <script type="text/javascript" src='scripts/example.js'></script>
+    <script type="text/javascript" src='maps.js'></script>
+  </head>
+  <body>
+    <h1 class='logo'>Tile Based Collision Detection</h1>
+    <div class="application">
+      <div class="synopsis section">
+        <h1>Overview</h1>
+        <p>
+          Tile based collision has been used since the early days of game design.
+          \nProviding a low cost method to perform collision detections with the world layout.
+          \nThis example aims to replicate that functionality and efficency.
+        </p>
+
+        <h1>Controls</h1>
+        <p><span>Important:</span> Focus on the example by pressing it first. This will also reset the example</p>
+        <p><span>Movment</span></p>
+        <p>Leftward - Press <span>A</span> or <span>Left Arrow Key</span></p>
+        <p>Rightward - Press <span>D</span> or <span>Right Arrow Key</span></p>
+        <p>Upward - Press <span>U</span> or <span>Up Arrow Key</span></p>
+        <p>Downward - Press <span>S</span> or <span>Down Arrow Key</span></p>
+      </div>
+
+      <div class="demonstration">
+        <canvas id="canvas"></canvas>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+body, html { width: 100%; height: 100%; }
+
+body{
+  display: flex; flex-flow: column nowrap;
+  font-family: Tahoma, sans-serif;
+  background: #EEE; color: #555;
+}
+
+h1,h2,h3,h4,h5,h6,p { padding: 6px; }
+
+span { font-weight: bold;}
+
+h1 { font-size: 1.125em; }
+
+h1.logo { font-size: 1.25em; }
+
+
+div.application {
+  display: flex; flex:1;
+}
+
+.synopsis {
+  width: 30%;
+  min-width: 300px;
+}
+
+.demonstration {
+  flex:1;
+  border-top: 1px solid black;
+}
+
+
+.section {
+  display: flex; flex-flow: column nowrap;
+  overflow-y: auto;
+  border-top: 1px solid black;
+}
+
+.section:not(:last-child) {
+  border-right: 1px solid black;
+}
+
+canvas {
+  position: relative;
+  left:50%; top:50%;
+  transform: translate(-50%, -50%);
+  background: rgba(79,75,75, 1);
+  background-image: repeating-linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4) 1px, transparent 1px, transparent 10px ),
+              repeating-linear-gradient(90deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4) 1px, transparent 1px, transparent 10px )
+}
