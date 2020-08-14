@@ -1,4 +1,9 @@
 'use strict';
+/*
+  Heavily referenced Javidx9 tile platforming code featured here
+  https://github.com/OneLoneCoder/videos/blob/master/OneLoneCoder_PlatformGame1.cpp
+*/
+
 const Tile_Collision_Engine = function( tilesize, map ) {
 
   var tile_types = {
@@ -54,7 +59,9 @@ const Tile_Collision_Engine = function( tilesize, map ) {
     if( get_tile_type( get_tile( target.left(dt), target.bottom(dt))) == 'SOLID' || get_tile_type(get_tile(target.right(dt) - 0.1, target.bottom(dt))) == 'SOLID') {
       target.y = (Math.floor(target.bottom(dt) / tilesize)) * tilesize - target.height;
       target.yspd = target.yspd > 0 ? 0 : target.yspd;
-      if( target.hasOwnProperty('onland')) target.onland = true;
+      if( target.hasOwnProperty('onland')) {
+        target.onland = true;
+      }
     }
   }
 
@@ -64,8 +71,10 @@ const Tile_Collision_Engine = function( tilesize, map ) {
   }
 
   const collide_y = (target, map, dt ) => {
-    if( target.yspd <= 0 ) collide_top(target, map, dt);
-    collide_bottom(target, map, dt);
+    if( target.yspd <= 0 )
+      collide_top(target, map, dt);
+    else
+      collide_bottom(target, map, dt);
   }
 
   const resolve_collisions = (objects, dt) => {

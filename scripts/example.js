@@ -1,7 +1,7 @@
 window.onload = event => {
 
   window.example = (( ) =>{
-    const TILESIZE = 40;
+    const TILESIZE = 40, FPS = 60;
     const aspectRatio = { width: 16, height: 9};
     const resolution = { width: 640, height: 360};
     const builder = new MapBuilder( TILESIZE );
@@ -64,7 +64,12 @@ window.onload = event => {
 
     document.getElementById('canvas').addEventListener('Render', drawExample );
 
+    const stop = function( ) {
+      window.cancelAnimationFrame(animation_id);
+    }
+
     const run = function() {
+      stop();
       let now = Date.now();
       let then = now;
       const GRAVITY = 13;
@@ -78,6 +83,7 @@ window.onload = event => {
           moveTarget( demonstration.target, dt);
           updateCamera(dt);
           drawExample();
+          statWriter( demonstration.target, graphics.ctx, TILESIZE );
         }
         then = now;
         animation_id = window.requestAnimationFrame( loop );
@@ -85,10 +91,23 @@ window.onload = event => {
       loop();
     }
 
+    document.addEventListener('click', function(e){
+      if( e.target == document.getElementById('canvas') ) {
+        run();
+      } else {
+        stop();
+      }
+    });
+    document.addEventListener('blur', stop);
+    /*
+    document.getElementById('canvas').addEventListener('click', run );
+    */
+
+    1000/60
+
     return {
       aspectRatio: aspectRatio,
       resolution: resolution,
-      run: run,
       createDemonstration:createDemonstration,
     }
 
@@ -96,6 +115,6 @@ window.onload = event => {
 
   window.onresize = window_resize;
   window_resize();
-  example.createDemonstration(1)
-  example.run();
+  example.createDemonstration(1);
+  //example.run();
 }

@@ -43,6 +43,7 @@ const Graphics = function( canvas ) {
     },
     renderScene: renderScene,
     renderObjects: renderObjects,
+    get ctx() { return ctx; },
   }
 
 }

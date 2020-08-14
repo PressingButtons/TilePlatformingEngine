@@ -13,6 +13,7 @@
     <script type="text/javascript" src='scripts/GameObject.js'></script>
     <script type="text/javascript" src='scripts/Tile_Collision_Engine.js'></script>
     <script type="text/javascript" src='scripts/demonstration.js'></script>
+    <script type="text/javascript" src='scripts/statWriter.js'></script>
     <script type="text/javascript" src='scripts/example.js'></script>
     <script type="text/javascript" src='maps.js'></script>
   </head>
@@ -28,16 +29,17 @@
         </p>
 
         <h1>Controls</h1>
-        <p><span>Important:</span> Focus on the example by pressing it first. This will also reset the example</p>
+        <p><span>Important:</span> To start/play, press the grey box to the right. The Example when pause when section or window is pressed.</p>
         <p><span>Movment</span></p>
         <p>Leftward - Press <span>A</span> or <span>Left Arrow Key</span></p>
         <p>Rightward - Press <span>D</span> or <span>Right Arrow Key</span></p>
         <p>Upward - Press <span>U</span> or <span>Up Arrow Key</span></p>
-        <p>Downward - Press <span>S</span> or <span>Down Arrow Key</span></p>
+        <p>Downward - Press <span>S</span> or <span>Down Arrow Key</span>. The player will float if in mid-air</p>
       </div>
 
       <div class="demonstration">
-        <canvas id="canvas"></canvas>
+          <canvas id="canvas"></canvas>
+          <div class="stats" id='stats'></div>
       </div>
     </div>
   </body>
